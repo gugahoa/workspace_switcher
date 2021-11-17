@@ -60,15 +60,15 @@ async fn main() -> io::Result<()> {
         }
     });
 
-    i3.send_msg_body(
+    dbg!(i3.send_msg_body(
         msg::Msg::RunCommand,
-        format!(
+        dbg!(format!(
             "{}; focus output {focused_output}",
             command,
             focused_output = focused_output.output
-        ),
+        )),
     )
-    .await?;
+    .await?);
 
     Ok(())
 }
